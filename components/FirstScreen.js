@@ -7,7 +7,8 @@
         return (
             <View style={styles.container}>
                
-            <Button title='screen 1' onPress={()=>navigation.navigate('main')}  ></Button>
+            <Button title='English' onPress={()=>navigation.navigate('main')}  ></Button>
+            <Button title='Arabic' onPress={()=>navigation.navigate('main')}  ></Button>
           
             </View>
         )
@@ -15,8 +16,8 @@
     const styles = StyleSheet.create({
         container: {
           flex: 1,
-           justifyContent:"space-between",
-           alignItems:"stretch",
+        
+           alignItems:"flex-start",
            backgroundColor:"black",
            
       
