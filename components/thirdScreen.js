@@ -5,7 +5,7 @@ export default function thirdScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <Text>this is the 3 screen</Text>
-           <Button title='back to secound screen' onPress={()=>navigation.navigate('SecoundScreen')} ></Button>
+           <Button title='back to lang' onPress={()=>navigation.navigate('first')} ></Button>
         </View>
     )
 }
