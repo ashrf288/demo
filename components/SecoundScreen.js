@@ -15,8 +15,7 @@ export default function SecoundScreen({ navigation,route }) {
 
     }
     useEffect(()=>{
-        
-        console.log(route.params.lang) 
+       console.log(route.params.lang)
     } ,[route.params])
 
     return (

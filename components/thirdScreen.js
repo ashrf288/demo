@@ -17,8 +17,10 @@ export default function thirdScreen({ navigation,route }) {
 
     return (
         <View style={styles.container}>
+
             <Text style={styles.textStyle}>{route.params.params.joke[number].joke}</Text> 
            <Button title='back to secound screen' onPress={()=>navigation.navigate('first')} ></Button>
+
         </View>
     )
 }
