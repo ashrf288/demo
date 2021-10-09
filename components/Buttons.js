@@ -12,7 +12,7 @@ export default function Button(props) {
 
 const styles = StyleSheet.create({
   button: {
-    marginTop:'70%',
+   
     margin:30,
     alignItems: 'center',
     justifyContent: 'center',
