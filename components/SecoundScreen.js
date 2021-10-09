@@ -4,7 +4,7 @@ import Button from './Buttons'
 export default function SecoundScreen({ navigation,route }) {
     useEffect(()=>{
         
-        console.log(route.params) 
+        console.log(route.params.lang) 
     } ,[route.params])
 
     return (
