@@ -9,7 +9,7 @@ const Tab = createBottomTabNavigator();
 import FirstScreen from './components/FirstScreen';
 import SecoundScreen from './components/SecoundScreen';
 import thirdScreen from './components/thirdScreen';
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView,SafeAreaProvider } from "react-native-safe-area-context";
 
 const Main=()=>{
 return(
@@ -24,7 +24,7 @@ return(
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container} >
+    <SafeAreaProvider style={styles.container} >
         <Image source={require("./assets/splash.png")} resizeMode="contain" style={styles.image}/>
       
       <NavigationContainer>
@@ -37,7 +37,7 @@ export default function App() {
     
       
    
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
