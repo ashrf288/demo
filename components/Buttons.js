@@ -13,20 +13,24 @@ export default function Button(props) {
 const styles = StyleSheet.create({
   button: {
    
-    margin:30,
+   
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: 'black',
+    paddingHorizontal: 12,
+    borderRadius: 100,
+    elevation: 100,
+    margin:5,
+    // marginLeft:'25%',
+    width:'50%',
+    backgroundColor: 'white',
+    
   },
   text: {
-    fontSize: 16,
+    fontSize: 20,
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'white',
+    color: 'black',
   },
 });
