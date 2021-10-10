@@ -1,6 +1,21 @@
 import React, { useEffect,useState } from 'react'
 import { View, Text,StyleSheet } from 'react-native'
 import Button from './Buttons'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
+let oldJokes=[]
+const getData = async () => {
+  try {
+    const data = await AsyncStorage.getItem('JokeId')
+    if(data !== null) {
+      oldJokes=[]
+    }else{
+      oldJokes=data
+    }
+  } catch(e) {
+    // error reading value
+  }
+}
 export default function thirdScreen({ navigation,route }) {
     // const [data, setData] = useState([])
     let getRandom=(min, max)=> {
@@ -13,7 +28,17 @@ export default function thirdScreen({ navigation,route }) {
         
       console.log(route.params.params.joke)
       console.log(route.params.params.joke[0].joke)
+      oldJokes.push(route.params.params.joke[number]._id)
+      saveData()
+     
     } ,[route.params])
+   let saveData=async()=>{
+      try {
+        await  AsyncStorage.setItem('JokeId',JSON.stringify(oldJokes))
+      } catch (e) {
+        console.log('saving error') 
+      }
+    }
 
     return (
         <View style={styles.container}>
