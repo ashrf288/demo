@@ -1,8 +1,8 @@
-import React, { useEffect,useState } from 'react'
-import { View, Text,StyleSheet } from 'react-native'
-import Button from './Buttons'
-import AsyncStorage from '@react-native-async-storage/async-storage'
-
+import React, { useEffect,useState } from 'react';
+import { View, Text,StyleSheet } from 'react-native';
+import Button from './Buttons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import CloudModal from './CloudModal';
 let oldJokes=[]
 
 const getData = async () => {
@@ -21,7 +21,8 @@ const getData = async () => {
 }
 getData()
 export default function thirdScreen({ navigation,route }) {
-    // const [data, setData] = useState([])
+    const [showLoader, setShow] = useState(true)
+const [showText, setshowText] = useState(false)
     let getRandom=(min, max)=> {
         
       return Math.floor(Math.random() * (max - min + 1) + min); 
@@ -29,6 +30,10 @@ export default function thirdScreen({ navigation,route }) {
       const number=getRandom(0,route.params.params.joke.length-1)
 
     useEffect(()=>{
+      setInterval(() => {
+        setShow(false)
+        setshowText(true)
+      }, 3000);
       
       console.log(oldJokes)
       console.log(route.params.params.joke[0].joke)
@@ -46,7 +51,7 @@ export default function thirdScreen({ navigation,route }) {
 
     return (
         <View style={styles.container}>
-
+            {showLoader&&<CloudModal/>} 
             <Text style={styles.textStyle}>{route.params.params.joke[number].joke}</Text> 
            <Button title='back to secound screen' onPress={()=>navigation.navigate('first')} ></Button>
 
