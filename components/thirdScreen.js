@@ -4,18 +4,22 @@ import Button from './Buttons'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 let oldJokes=[]
+
 const getData = async () => {
   try {
     const data = await AsyncStorage.getItem('JokeId')
-    if(data !== null) {
-      oldJokes=[]
+    console.log(data)
+    if(data ) {
+      oldJokes=JSON.parse(data)
+      console.log('after parse'+data)
     }else{
-      oldJokes=data
+      oldJokes=[]
     }
   } catch(e) {
     // error reading value
   }
 }
+getData()
 export default function thirdScreen({ navigation,route }) {
     // const [data, setData] = useState([])
     let getRandom=(min, max)=> {
@@ -25,8 +29,8 @@ export default function thirdScreen({ navigation,route }) {
       const number=getRandom(0,route.params.params.joke.length-1)
 
     useEffect(()=>{
-        
-      console.log(route.params.params.joke)
+      
+      console.log(oldJokes)
       console.log(route.params.params.joke[0].joke)
       oldJokes.push(route.params.params.joke[number]._id)
       saveData()
