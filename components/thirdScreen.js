@@ -52,7 +52,7 @@ const [showText, setshowText] = useState(false)
     return (
         <View style={styles.container}>
             {showLoader&&<CloudModal/>} 
-            <Text style={styles.textStyle}>{route.params.params.joke[number].joke}</Text> 
+           {showText&&<Text style={styles.textStyle}>{route.params.params.joke[number].joke}</Text>}  
            <Button title='back to secound screen' onPress={()=>navigation.navigate('first')} ></Button>
 
         </View>

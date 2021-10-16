@@ -13,7 +13,7 @@ const App = () => {
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
           <Image source={require("../assets/cloud_big.gif")}/>
-          <Text style={styles.textStyle}>are you ready to laugh</Text>
+          <Text style={styles.textStyle}>getting your joke ...</Text>
           {/* <Text style={styles.textStyle}>are you ready to laugh</Text> */}
           </View>
         </View>
