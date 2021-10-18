@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { View, Text,StyleSheet } from 'react-native'
 import Button from './Buttons'
 import axios from 'axios'
+
 export default function SecoundScreen({ navigation,route }) {
     let clickHandler=()=>{
          axios.get("https://jokes-money.herokuapp.com/").then(res=>
@@ -12,7 +13,7 @@ export default function SecoundScreen({ navigation,route }) {
         })}
          ).catch(err=>console.log(err))
         
-
+        
     }
     useEffect(()=>{
        console.log(route.params.lang)
@@ -22,6 +23,7 @@ export default function SecoundScreen({ navigation,route }) {
         <View style={styles.container}>
             <Button title='Buy A Joke' onPress={clickHandler} ></Button>
             <Button title='back to Language' onPress={()=>navigation.navigate('first')} ></Button>
+           
         </View>
     )
 }
